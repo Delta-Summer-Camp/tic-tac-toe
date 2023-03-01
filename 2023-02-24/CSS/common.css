@@ -3,7 +3,11 @@
 	padding: 0;
 	box-sizing: border-box;
 }
-
+img {
+    width: 200px;
+    height: 300px;
+    border: #9c27b0 5px solid;
+}
 .row {
 	display: flex;
 }
@@ -11,5 +15,4 @@
 	width: 100px;
 	height: 100px;
 	border: darkblue 1px solid;
-	cursor: pointer;
 }
