@@ -3,15 +3,7 @@
 	padding: 0;
 	box-sizing: border-box;
 }
-.wrap {
-	padding: 40px;
-}
-button {
-	width: 70px;
-}
-.count {
-	margin-top: 20px;
-}
+
 .row {
 	display: flex;
 }
