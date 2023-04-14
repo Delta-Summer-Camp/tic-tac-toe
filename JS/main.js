@@ -13,36 +13,31 @@ function subOne() {
 */
 
 var step = +1; // чей ход: +1 - "крестики", -1 - "нолики"
-var c11 = 0; // что в ячейке 11
-var c12 = 0; // что в ячейке 12
+const cells = []; // массив переменных, в которых хранится состояние клеток
+// Сначала заполняем поле нулями - в начале ничего нет
+cells[11] = 0;
+cells[12] = 0;
+cells[13] = 0;
+cells[21] = 0;
+cells[22] = 0;
+cells[23] = 0;
+cells[31] = 0;
+cells[32] = 0;
+cells[33] = 0;
+
 
 // cellNode - находится то же самое, что мы получаем из функции document.getElementBuId
 // cellNo - идентификатор ячейки
 function imClicked(cellNode, cellNo) {
-	switch (cellNo) {
-	case 11:
-		if (c11 == 0) {
-			if (step == +1) {
-				cellNode.style.backgroundImage = "url('IMG/x.gif')";
-				c11 = +1;
-				step = -1;
-			} else {
-				cellNode.style.backgroundImage = "url('IMG/o.gif')";
-				c11 = -1;
-				step = +1;				
-			}
+	if (cells[cellNo] == 0) {
+		if (step == +1) {
+			cellNode.style.backgroundImage = "url('IMG/x.gif')";
+			cells[cellNo] = +1;
+			step = -1;
+		} else {
+			cellNode.style.backgroundImage = "url('IMG/o.gif')";
+			cells[cellNo] = -1;
+			step = +1;				
 		}
-		break;
-	case 12:
-		if (c12 == 0) {
-			if (step == +1) {
-				cellNode.style.backgroundImage = "url('IMG/x.gif')";
-				step = -1;
-			} else {
-				cellNode.style.backgroundImage = "url('IMG/o.gif')";
-				step = +1;				
-			}
-		}
-		break;		
 	}
 }
