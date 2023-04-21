@@ -1,43 +1,51 @@
-/*
-let count = 0;
+var timer;
+var wolfPosition = 3;
+var eggPosition = 1;
 
-function addOne() {
-	count = count + 1;
-	const countNode = document.getElementById("counter");
-	countNode.innerText = count;
+function init() {
+	timer = setInterval(ticker, 1000);
+
+	document.getElementById("53").style.backgroundImage="url('IMG/wolf.png')";
+	document.getElementById("11").style.backgroundImage="url('IMG/egg.png')";
+
+	addEventListener("keydown", keyDown);
 }
 
-function subOne() {
-	document.getElementById("counter").innerText = --count;
-}
-*/
-
-var step = +1; // чей ход: +1 - "крестики", -1 - "нолики"
-const cells = []; // массив переменных, в которых хранится состояние клеток
-// Сначала заполняем поле нулями - в начале ничего нет
-cells[11] = 0;
-cells[12] = 0;
-cells[13] = 0;
-cells[21] = 0;
-cells[22] = 0;
-cells[23] = 0;
-cells[31] = 0;
-cells[32] = 0;
-cells[33] = 0;
-
-
-// cellNode - находится то же самое, что мы получаем из функции document.getElementBuId
-// cellNo - идентификатор ячейки
-function imClicked(cellNode, cellNo) {
-	if (cells[cellNo] == 0) {
-		if (step == +1) {
-			cellNode.style.backgroundImage = "url('IMG/x.gif')";
-			cells[cellNo] = +1;
-			step = -1;
+function ticker() {
+	if (eggPosition < 4) {
+		var id = eggPosition * 10 + 1;
+		document.getElementById(id).style.backgroundImage="none";
+		eggPosition++;
+		id = eggPosition * 10 + 1;
+		document.getElementById(id).style.backgroundImage="url('IMG/egg.png')";
+	} else {
+		if (wolfPosition != 1) {
+			alert("You lost!");
 		} else {
-			cellNode.style.backgroundImage = "url('IMG/o.gif')";
-			cells[cellNo] = -1;
-			step = +1;				
+			document.getElementById("41").style.backgroundImage="none";
+			document.getElementById("51").style.backgroundImage="url('IMG/wolf_win.png')";
+			alert("You win!");
 		}
+		clearInterval(timer);				
+	}
+}
+
+function keyDown(event) {
+	if (event.keyCode == 39) { // right
+		if (wolfPosition < 5) {
+			var id = 50 + wolfPosition;
+			document.getElementById(id).style.backgroundImage="none";
+			wolfPosition++;
+			id = 50 + wolfPosition;
+			document.getElementById(id).style.backgroundImage="url('IMG/wolf.png')";
+		} 
+	} else if (event.keyCode == 37) { // left
+		if (wolfPosition > 1) {
+			var id = 50 + wolfPosition;
+			document.getElementById(id).style.backgroundImage="none";
+			wolfPosition--;
+			id = 50 + wolfPosition;
+			document.getElementById(id).style.backgroundImage="url('IMG/wolf.png')";
+		} 
 	}
 }

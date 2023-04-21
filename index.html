@@ -3,26 +3,46 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Крестики-нолики</title>
+    <title>Ну погоди!!!</title>
     <script src="JS/main.js"></script>
     <link rel="stylesheet" type="text/css" href="CSS/common.css">
 </head>
-<body>
+<body onload="init();">
 <div class="game_board">
     <div class="row">
-        <div class="cell" onclick="imClicked(this, 11);"></div>
-        <div class="cell" onclick="imClicked(this, 12);"></div>
-        <div class="cell" onclick="imClicked(this, 13);"></div>
+        <div class="cell" id="11"></div>
+        <div class="cell" id="12"></div>
+        <div class="cell" id="13"></div>
+        <div class="cell" id="14"></div>
+        <div class="cell" id="15"></div>
     </div>
     <div class="row">
-        <div class="cell" onclick="imClicked(this, 21);"></div>
-        <div class="cell" onclick="imClicked(this, 22);"></div>
-        <div class="cell" onclick="imClicked(this, 23);"></div>
+        <div class="cell" id="21"></div>
+        <div class="cell" id="22"></div>
+        <div class="cell" id="23"></div>
+        <div class="cell" id="24"></div>
+        <div class="cell" id="25"></div>
     </div>
     <div class="row">
-        <div class="cell" onclick="imClicked(this, 31);"></div>
-        <div class="cell" onclick="imClicked(this, 32);"></div>
-        <div class="cell" onclick="imClicked(this, 33);"></div>
+        <div class="cell" id="31"></div>
+        <div class="cell" id="32"></div>
+        <div class="cell" id="33"></div>
+        <div class="cell" id="34"></div>
+        <div class="cell" id="35"></div>
+    </div>
+    <div class="row">
+        <div class="cell" id="41"></div>
+        <div class="cell" id="42"></div>
+        <div class="cell" id="43"></div>
+        <div class="cell" id="44"></div>
+        <div class="cell" id="45"></div>
+    </div>
+    <div class="row">
+        <div class="cell background" id="51"></div>
+        <div class="cell background" id="52"></div>
+        <div class="cell background" id="53"></div>
+        <div class="cell background" id="54"></div>
+        <div class="cell background" id="55"></div>
     </div>
 </div>
 </body>
